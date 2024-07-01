@@ -1,9 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { HousingLocationComponent } from '../housing-location';
-import { HousingLocationInterface } from '../housing-location/housing-location.type';
-import { housingLocationList } from './mock/data';
+import { 
+  HousingLocationComponent,
+  HousingLocationService,
+  HousingLocationInterface,
+} from '../housing-location';
 
 @Component({
   selector: 'app-home',
@@ -13,10 +15,10 @@ import { housingLocationList } from './mock/data';
   styleUrl: './home.component.scss',
 })
 export class HomeComponent {
-  readonly baseUrl = '/assets/houses';
+  housingService: HousingLocationService = inject(HousingLocationService);
+  housingLocationList!: HousingLocationInterface[];
 
-  housingLocationList: HousingLocationInterface[] = housingLocationList.map((house) => ({
-    ...house,
-    photo: `${this.baseUrl}/${house.photo}`
-  }));
+  constructor() {
+    this.housingLocationList = this.housingService.getAllHousingLocations();
+  }
 }
