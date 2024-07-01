@@ -1,7 +1,9 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { 
+import {FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
+
+import {
   HousingLocationComponent,
   HousingLocationService,
   HousingLocationInterface,
@@ -10,15 +12,29 @@ import {
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, HousingLocationComponent],
+  imports: [CommonModule, HousingLocationComponent, ReactiveFormsModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
 export class HomeComponent {
   housingService: HousingLocationService = inject(HousingLocationService);
   housingLocationList!: HousingLocationInterface[];
+  filteredLocationList: HousingLocationInterface[] = [];
+
+  filterForm = new FormGroup({
+    filter: new FormControl(''),
+  });
 
   constructor() {
     this.housingLocationList = this.housingService.getAllHousingLocations();
+    this.filteredLocationList = this.housingLocationList;
   }
+
+  filterResults = () => {
+    const filtered: string = this.filterForm.value.filter ?? '';
+
+    this.filteredLocationList = this.housingLocationList.filter(({ city }) =>
+      city.toLowerCase().includes(filtered.toLowerCase())
+    );
+  };
 }
