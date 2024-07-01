@@ -6,7 +6,7 @@ import {
   HousingLocationInterface,
 } from '../housing-location';
 
-import {FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-details',
@@ -27,15 +27,19 @@ export class DetailsComponent {
   });
 
   constructor() {
-    const housingLocationId  = Number(this.route.snapshot.params['id']);
-    this.housingLocation = this.housingService.getHousingLocationById(housingLocationId);
+    const housingLocationId = Number(this.route.snapshot.params['id']);
+    this.housingService
+      .getHousingLocationById(housingLocationId)
+      .then((housingLocation) => {
+        this.housingLocation = housingLocation;
+      });
   }
 
   submitApplication() {
     this.housingService.submitApplication(
       this.applyForm.value.firstName ?? '',
       this.applyForm.value.lastName ?? '',
-      this.applyForm.value.email ?? '',
+      this.applyForm.value.email ?? ''
     );
   }
 }

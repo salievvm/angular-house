@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import {FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 import {
   HousingLocationComponent,
@@ -26,8 +26,12 @@ export class HomeComponent {
   });
 
   constructor() {
-    this.housingLocationList = this.housingService.getAllHousingLocations();
-    this.filteredLocationList = this.housingLocationList;
+    this.housingService
+      .getAllHousingLocations()
+      .then((housingLocationList: HousingLocationInterface[]) => {
+        this.housingLocationList = housingLocationList;
+        this.filteredLocationList = this.housingLocationList;
+      });
   }
 
   filterResults = () => {

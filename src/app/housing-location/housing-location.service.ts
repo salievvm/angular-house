@@ -6,19 +6,18 @@ import { housingLocationList } from './mock/data';
   providedIn: 'root'
 })
 export class HousingLocationService {
-  readonly baseUrl = '/assets/houses';
+  readonly url = 'http://localhost:3000/locations';
 
-  housingLocationList: HousingLocationInterface[] = housingLocationList.map((house) => ({
-    ...house,
-    photo: `${this.baseUrl}/${house.photo}`
-  }));
+  housingLocationList: HousingLocationInterface[] = housingLocationList;
 
-  getAllHousingLocations(): HousingLocationInterface[] {
-    return this.housingLocationList;
+  async getAllHousingLocations(): Promise<HousingLocationInterface[]> {
+    const data = await fetch(this.url);
+    return (await data.json()) ?? [];
   }
-  
-  getHousingLocationById(id: number): HousingLocationInterface | undefined {
-    return this.housingLocationList.find((housingLocation) => housingLocation.id === id);
+
+  async getHousingLocationById(id: number): Promise<HousingLocationInterface | undefined> {
+    const data = await fetch(`${this.url}/${id}`);
+    return (await data.json()) ?? {};
   }
 
   submitApplication(firstName: string, lastName: string, email: string) {
