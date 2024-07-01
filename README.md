@@ -1,10 +1,16 @@
 # AngularHouse
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.4.
+This project was generated created in educational purpose [https://angular.dev/tutorials/first-app/14-http](https://angular.dev/tutorials/first-app/14-http) with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.4.
 
 ## Development server
 
+Run `npm i`.
+
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+
+Run `json-server --watch db.json` for a http server. Navigate to `http://localhost:3000/locations`. This server will provide api data for application.
+
+Or just run `npm start` to start both servers.
 
 ## Code scaffolding
 
