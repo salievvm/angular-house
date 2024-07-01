@@ -1,1 +1,6 @@
-<p>housing-location works!</p>
+<button type="button" (click)="handleIsShown()" class="primary">Убрать видимость</button>
+
+@if (isShown) {
+  <p>housing-location works {{ isShown }}!</p>
+  <p>{{ housingLocation.id }}</p>
+} 

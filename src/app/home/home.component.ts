@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import {
-  HousingLocationComponent,
-  HousingLocationInterface,
-} from '../housing-location/';
+import { HousingLocationComponent } from '../housing-location';
+import { HousingLocationInterface } from '../housing-location/housing-location.type';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +11,6 @@ import {
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
-
 export class HomeComponent {
   readonly baseUrl = 'https://angular.dev/assets/tutorials/common';
 
