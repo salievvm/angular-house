@@ -1,0 +1,25 @@
+$base-spacing: 4px;
+
+:host {
+  --content-padding: $base-spacing;
+}
+
+@function padding($x) {
+  @return $base-spacing * $x;
+}
+
+header.brand-name {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: padding(4);
+  box-shadow: 0px 5px 25px var(--shadow-color);
+}
+
+.content {
+  padding: padding(4);
+}
+
+.brand-logo {
+  height: 24px;
+}
