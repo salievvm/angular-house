@@ -28,3 +28,7 @@ button.primary {
 .box {
   padding: padding(2) 0;
 }
+
+div, section {
+  box-sizing: border-box;
+}
