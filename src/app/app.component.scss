@@ -1,12 +1,4 @@
-$base-spacing: 4px;
-
-:host {
-  --content-padding: $base-spacing;
-}
-
-@function padding($x) {
-  @return $base-spacing * $x;
-}
+@import '../styles.scss';
 
 header.brand-name {
   display: flex;

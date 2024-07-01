@@ -1,9 +1,11 @@
+@import '../../styles.scss';
+
 .results {
   display: grid;
   column-gap: 14px;
   row-gap: 14px;
   grid-template-columns: repeat(auto-fill, minmax(400px, 400px));
-  margin-top: 50px;
+  margin-top: padding(8);
   justify-content: space-around;
 }
 
@@ -17,7 +19,7 @@ input[type="text"] {
 }
 
 button {
-  padding: 10px;
+  padding: padding(3);
   border: solid 1px var(--primary-color);
   background: var(--primary-color);
   color: white;
