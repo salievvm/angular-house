@@ -8,11 +8,12 @@ import {
   HousingLocationService,
   HousingLocationInterface,
 } from '../housing-location';
+import { ButtonComponent } from 'bcc-design-system-angular';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, HousingLocationComponent, ReactiveFormsModule],
+  imports: [CommonModule, HousingLocationComponent, ReactiveFormsModule, ButtonComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
