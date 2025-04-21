@@ -1,0 +1,209 @@
+<section class="section">
+  <h2>Radio</h2>
+  <p>Ниже представлен пример использования компонента Radio:</p>
+  <h3>Примеры состояний радиобатона</h3>
+  <bcc-ds-card>
+    <div class="bcc-column">
+      <div class="bcc-row align-start">
+        <div>
+          <h4>Обычное состояние:</h4>
+          <bcc-ds-radio
+            (onChange)="handleRadioChange('radio1')"
+            [align]="'center'"
+            [animateCaption]="true"
+            [checked]="isChecked === 'radio1'"
+            [dataTestId]="'radio-id'"
+            [fullWidth]="true"
+            [hint]="'This is a hint for the radio button.'"
+            [justify]="'start'"
+            [label]="'Radio Button Title'"
+            [name]="'group1'"
+            [preserveCaptionSpace]="false"
+            [reversed]="false"
+            [size]="'md'"
+          ></bcc-ds-radio>
+        </div>
+        <div>
+          <h4>Disabled состояние:</h4>
+          <bcc-ds-radio
+            (onChange)="handleRadioChange('radio2')"
+            [align]="'center'"
+            [animateCaption]="true"
+            [checked]="isChecked === 'radio2'"
+            [dataTestId]="'radio-id'"
+            [fullWidth]="true"
+            [hint]="'This is a hint for the radio button.'"
+            [justify]="'start'"
+            [label]="'Disabled'"
+            [name]="'group1'"
+            [preserveCaptionSpace]="false"
+            [size]="'md'"
+            [disabled]="true"
+          ></bcc-ds-radio>
+        </div>
+        <div>
+          <h4>Состояние ошибки:</h4>
+          <bcc-ds-radio
+            (onChange)="handleRadioChange('radio3')"
+            [align]="'center'"
+            [animateCaption]="true"
+            [checked]="isChecked === 'radio3'"
+            [dataTestId]="'radio-id-2'"
+            [disabled]="false"
+            [error]="'This is a error'"
+            [fullWidth]="true"
+            [hint]="'This is a hint for the radio button.'"
+            [label]="'Radio Button Title'"
+            [name]="'group1'"
+            [preserveCaptionSpace]="false"
+            [reversed]="false"
+            [size]="'md'"
+          ></bcc-ds-radio>
+        </div>
+      </div>
+    </div>
+  </bcc-ds-card>
+  <h3>Позиционирование</h3>
+  <bcc-ds-card>
+    <div class="bcc-column">
+      <h4>Размер:</h4>
+      <div class="bcc-row">
+        <bcc-ds-radio
+          (onChange)="handleRadioChange('radio10')"
+          [animateCaption]="true"
+          [checked]="isChecked === 'radio10'"
+          [dataTestId]="'radio-id-10'"
+          [disabled]="false"
+          [fullWidth]="true"
+          [hint]="'small'"
+          [label]="'SM'"
+          [name]="'group2'"
+          [reversed]="false"
+          [size]="'sm'"
+        ></bcc-ds-radio>
+        <bcc-ds-radio
+          (onChange)="handleRadioChange('radio11')"
+          [animateCaption]="true"
+          [checked]="isChecked === 'radio11'"
+          [dataTestId]="'radio-id-11'"
+          [disabled]="false"
+          [fullWidth]="true"
+          [hint]="'middle'"
+          [label]="'MD'"
+          [name]="'group2'"
+          [reversed]="false"
+          [size]="'md'"
+        ></bcc-ds-radio>
+        <bcc-ds-radio
+          (onChange)="handleRadioChange('radio12')"
+          [animateCaption]="true"
+          [checked]="isChecked === 'radio12'"
+          [dataTestId]="'radio-id-12'"
+          [disabled]="false"
+          [fullWidth]="true"
+          [hint]="'large'"
+          [label]="'LG'"
+          [name]="'group2'"
+          [reversed]="false"
+          [size]="'lg'"
+        ></bcc-ds-radio>
+      </div>
+      <h4>Align (Выравнивание по вертикали):</h4>
+      <div class="bcc-row">
+        <bcc-ds-radio
+          (onChange)="handleRadioChange('radio4')"
+          [align]="'start'"
+          [animateCaption]="true"
+          [checked]="isChecked === 'radio4'"
+          [dataTestId]="'radio-id-2'"
+          [disabled]="false"
+          [fullWidth]="false"
+          [hint]="'start'"
+          [justify]="'start'"
+          [label]="'Начало'"
+          [name]="'group3'"
+        ></bcc-ds-radio>
+        <bcc-ds-radio
+          (onChange)="handleRadioChange('radio5')"
+          [align]="'center'"
+          [animateCaption]="true"
+          [checked]="isChecked === 'radio5'"
+          [dataTestId]="'radio-id-2'"
+          [disabled]="false"
+          [fullWidth]="false"
+          [hint]="'center'"
+          [justify]="'start'"
+          [label]="'Середина'"
+          [name]="'group3'"
+        ></bcc-ds-radio>
+        <bcc-ds-radio
+          (onChange)="handleRadioChange('radio6')"
+          [align]="'end'"
+          [animateCaption]="true"
+          [checked]="isChecked === 'radio6'"
+          [dataTestId]="'radio-id-2'"
+          [disabled]="false"
+          [fullWidth]="false"
+          [hint]="'end'"
+          [justify]="'start'"
+          [label]="'Конец'"
+          [name]="'group3'"
+        ></bcc-ds-radio>
+      </div>
+      <h4>Justify (Выравнивание по горизонтали):</h4>
+      <div class="bcc-row justify-between">
+        <div class="bcc-col-4">
+          <bcc-ds-radio
+            (onChange)="handleRadioChange('radio7')"
+            [align]="'center'"
+            [animateCaption]="true"
+            [checked]="isChecked === 'radio7'"
+            [dataTestId]="'radio-id-2'"
+            [disabled]="false"
+            [fullWidth]="true"
+            [hint]="'start'"
+            [justify]="'start'"
+            [label]="'Начало'"
+            [name]="'group4'"
+            [reversed]="false"
+            [size]="'md'"
+          ></bcc-ds-radio>
+        </div>
+        <div class="bcc-col-4">
+          <bcc-ds-radio
+            (onChange)="handleRadioChange('radio8')"
+            [align]="'center'"
+            [animateCaption]="true"
+            [checked]="isChecked === 'radio8'"
+            [dataTestId]="'radio-id-2'"
+            [disabled]="false"
+            [fullWidth]="true"
+            [hint]="'center'"
+            [justify]="'center'"
+            [label]="'Середина'"
+            [name]="'group4'"
+            [reversed]="false"
+            [size]="'md'"
+          ></bcc-ds-radio>
+        </div>
+        <div class="bcc-col-4">
+          <bcc-ds-radio
+            (onChange)="handleRadioChange('radio9')"
+            [align]="'center'"
+            [animateCaption]="true"
+            [checked]="isChecked === 'radio9'"
+            [dataTestId]="'radio-id-2'"
+            [disabled]="false"
+            [fullWidth]="true"
+            [hint]="'end'"
+            [justify]="'end'"
+            [label]="'Конец'"
+            [name]="'group4'"
+            [reversed]="false"
+            [size]="'md'"
+          ></bcc-ds-radio>
+        </div>
+      </div>
+    </div>
+  </bcc-ds-card>
+</section>

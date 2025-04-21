@@ -9,11 +9,12 @@ import {
   HousingLocationInterface,
 } from '../housing-location';
 import { ButtonComponent } from 'bcc-design-system-angular';
+import { RadioStoriesComponent } from './radio-stories/radio-stories.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, HousingLocationComponent, ReactiveFormsModule, ButtonComponent],
+  imports: [CommonModule, HousingLocationComponent, ReactiveFormsModule, ButtonComponent, RadioStoriesComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
